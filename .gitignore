@@ -10,4 +10,7 @@ results/*.csv
 # Local system and R files
 .DS_Store
 .RData
+.Rhistorydata/MQB/
+
 .Rhistory
+data/MQB/

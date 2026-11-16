@@ -1,0 +1,13 @@
+observations <- data.frame("data/bootcamp_observations_invalid.csv",
+  colClasses = "character", na.strings = "", check.names = FALSE
+  )
+  
+observations <- data.frame(
+  site = c("A", "B"),
+  date = c("2026-10-01", "2026-10-01"),
+  count = c("-1", "many")
+)
+
+grepl("^(0|[1-9][0-9]*)$", count)
+print(observations)
+as integer(-1,"many")
