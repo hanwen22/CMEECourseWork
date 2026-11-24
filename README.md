@@ -117,3 +117,75 @@ script_path=$project_root/code/tiff2_png.sh
 mkdir "$shell_practice/images"
 cd "$shell_practice/images"
 pwd
+
+# 6. boilerplate.py
+## input: python3 code/boilerplate.py
+## output: This is a boilerplate
+
+# 7. using_name.py
+## input:python3 code/using_name.py
+## output:This module's name is: __main__
+
+# 8. sysargv.py
+## input: python3 code/sysargv.py and python3 code/sysargv.py oak 12
+## output: Script name: code/sysargv.py
+Number of arguments: 0
+Arguments: []
+Script name: code/sysargv.py
+Number of arguments: 2
+Arguments: ['oak', '12']
+
+# 9. control_flow.py
+## input: python3 code/control_flow.py
+## output: 
+22 is Even!
+33 is Odd!
+Largest divisor among 2, 3, 4 and 5: 5
+Is 59 prime? True
+Primes up to 20: [2, 3, 5, 7, 11, 13, 17, 19]
+
+# 10. observations_practice.py
+## input: python3 code/observations_practice.py
+## output:
+{'site': 'A', 'date': '2026-10-01', 'count': '2'}
+{'site': 'A', 'date': '2026-10-02', 'count': ''}
+
+# 11. debugme.py
+## First input: %run code/debugme.py
+## we get: ---------------------------------------------------------------------------
+ZeroDivisionError                         Traceback (most recent call last)
+File ~/Documents/Projects/Software/MulQuaBio/MQB/content/code/debugme.py:8
+      5         z = x/y
+      6     return z
+----> 8 buggyfunc(20)
+
+File ~/Documents/Projects/Software/MulQuaBio/MQB/content/code/debugme.py:5, in buggyfunc(x)
+      3 for i in range(x):
+      4     y = y-1
+----> 5     z = x/y
+      6 return z
+
+ZeroDivisionError: division by zero
+## then we input: %pdb
+%run code/debugme.py
+## this time we get output: ---------------------------------------------------------------------------
+ZeroDivisionError                         Traceback (most recent call last)
+code/debugme.py in <module>
+      6     return z
+      7 
+----> 8 buggyfunc(20)
+
+code/debugme.py in buggyfunc(x)
+      3     for i in range(x):
+      4         y = y-1
+----> 5         z = x/y
+      6     return z
+      7 
+
+ZeroDivisionError: division by zero
+> code/debugme.py(5)buggyfunc()
+      3     for i in range(x):
+      4         y = y-1
+----> 5         z = x/y
+      6     return z
+      7 
