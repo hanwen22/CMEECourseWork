@@ -1,8 +1,13 @@
-z <- runif(1)
-if (z <= 0.5) {print("less than a half")}
-cat("Script complete!\n")
+# A simple R script illustrating file input and output.
+# Run from the coursework project root with:
+# Rscript code/basic_io.R
 
-for (i in 1:10) {
-    j <- i * i
-    print(paste(i, " squared is", j ))
-}
+MyData <- read.csv("data/trees.csv", header = TRUE) # Import with headers
+
+write.csv(MyData, "results/MyData.csv") # Write it as a new file
+
+write.table(MyData[1, ], file = "results/MyData.csv", append = TRUE) # Append to it
+
+write.csv(MyData, "results/MyData.csv", row.names = TRUE) # Write row names
+
+write.table(MyData, "results/MyData.csv", col.names = FALSE) # Omit column names

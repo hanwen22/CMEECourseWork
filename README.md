@@ -189,3 +189,149 @@ ZeroDivisionError: division by zero
 ----> 5         z = x/y
       6     return z
       7 
+
+# 12. basic_io.R
+## input: source("code/basic_io.R")
+## output: Warning message in write.table(MyData[1, ], file = "results/MyData.csv", append = TRUE): “appending column names to file”
+
+# 13. # boilerplate.R
+## input: source("code/boilerplate.R")
+## output: Argument 1 is a numeric
+Argument 2 is a numeric
+Argument riki is a character
+Argument Tiki is a character
+
+# 14. try.R
+## input: lapply(1:15, function(i) doit(popn))
+## output: [1] "Mean of this sample was: -0.11620822588674"
+[1] "Mean of this sample was: -0.046851675599593"
+[1] "Mean of this sample was: -0.0890228211466614"
+[1] "Mean of this sample was: -0.124229742255296"
+Error in doit(popn) : Couldn't calculate mean: too few unique values!
+## input: result <- lapply(1:15, function(i) try(doit(popn), FALSE))
+## output: [1] "Mean of this sample was: 0.0314144452816157"
+[1] "Mean of this sample was: -0.233476945796405"
+[1] "Mean of this sample was: -0.196681538928001"
+[1] "Mean of this sample was: 0.0146969612111606"
+[1] "Mean of this sample was: -0.234913159471725"
+[1] "Mean of this sample was: -0.0497464588165691"
+Error in doit(popn) : Couldn't calculate mean: too few unique values!
+[1] "Mean of this sample was: 0.14834078393269"
+[1] "Mean of this sample was: -0.271626543849156"
+[1] "Mean of this sample was: -0.0661949014450446"
+[1] "Mean of this sample was: -0.162429229014161"
+[1] "Mean of this sample was: -0.0962033633604762"
+[1] "Mean of this sample was: -0.025525566612254"
+[1] "Mean of this sample was: -0.196872015952289"
+[1] "Mean of this sample was: 0.1902095255599"
+
+## input3: result
+## output3: [[1]]
+[1] "Mean of this sample was: 0.0314144452816157"
+
+[[2]]
+[1] "Mean of this sample was: -0.233476945796405"
+
+[[3]]
+[1] "Mean of this sample was: -0.196681538928001"
+
+[[4]]
+[1] "Mean of this sample was: 0.0146969612111606"
+
+[[5]]
+[1] "Mean of this sample was: -0.234913159471725"
+
+[[6]]
+[1] "Mean of this sample was: -0.0497464588165691"
+
+[[7]]
+[1] "Error in doit(popn) : Couldn't calculate mean: too few unique values!\n"
+attr(,"class")
+[1] "try-error"
+attr(,"condition")
+<simpleError in doit(popn): Couldn't calculate mean: too few unique values!>
+
+[[8]]
+[1] "Mean of this sample was: 0.14834078393269"
+
+[[9]]
+[1] "Mean of this sample was: -0.271626543849156"
+
+[[10]]
+[1] "Mean of this sample was: -0.0661949014450446"
+
+[[11]]
+[1] "Mean of this sample was: -0.162429229014161"
+
+[[12]]
+[1] "Mean of this sample was: -0.0962033633604762"
+
+[[13]]
+[1] "Mean of this sample was: -0.025525566612254"
+
+[[14]]
+[1] "Mean of this sample was: -0.196872015952289"
+
+[[15]]
+[1] "Mean of this sample was: 0.1902095255599"
+
+## input4(after): result
+## output4: [[1]]
+[1] "Mean of this sample was: -0.123990166669901"
+
+[[2]]
+[1] "Error in doit(popn) : Couldn't calculate mean: too few unique values!\n"
+attr(,"class")
+[1] "try-error"
+attr(,"condition")
+<simpleError in doit(popn): Couldn't calculate mean: too few unique values!>
+
+[[3]]
+[1] "Mean of this sample was: 0.0818124335353192"
+
+[[4]]
+[1] "Mean of this sample was: -0.139655286435176"
+
+[[5]]
+[1] "Mean of this sample was: -0.0215429865826123"
+
+[[6]]
+[1] "Error in doit(popn) : Couldn't calculate mean: too few unique values!\n"
+attr(,"class")
+[1] "try-error"
+attr(,"condition")
+<simpleError in doit(popn): Couldn't calculate mean: too few unique values!>
+
+[[7]]
+[1] "Mean of this sample was: 0.00539838134322892"
+
+[[8]]
+[1] "Error in doit(popn) : Couldn't calculate mean: too few unique values!\n"
+attr(,"class")
+[1] "try-error"
+attr(,"condition")
+<simpleError in doit(popn): Couldn't calculate mean: too few unique values!>
+
+[[9]]
+[1] "Mean of this sample was: 0.146907839413106"
+
+[[10]]
+[1] "Mean of this sample was: -0.152002314653857"
+
+[[11]]
+[1] "Mean of this sample was: 0.0161321300360042"
+
+[[12]]
+[1] "Mean of this sample was: -0.241857872516043"
+
+[[13]]
+[1] "Mean of this sample was: -0.16077541901813"
+
+[[14]]
+[1] "Mean of this sample was: -0.0450988128783513"
+
+[[15]]
+[1] "Mean of this sample was: -0.162230652541811"
+
+## input5: tryCatch(),and try()
+## output5: Error in tryCatch() : argument "expr" is missing, with no default       /       Error in try() : argument "expr" is missing, with no default
