@@ -136,4 +136,24 @@ assert oak_counts == [
 non_oak_rows = [{"genus": "Acer", "species": "pseudoplatanus"}]
 assert summarise_oaks(non_oak_rows) == []
 
-print("OK.")
+
+# Check the complete cleaning workflow: invalid records must not contribute
+# to the oak summary.
+invalid_oak_row = valid_row.copy()
+invalid_oak_row["record_id"] = "ST902"
+invalid_oak_row["species"] = "petraea"
+invalid_oak_row["distance_m"] = "0"
+
+workflow_clean, workflow_issues = process_records(
+    [valid_row, invalid_oak_row]
+)
+assert len(workflow_clean) == 1
+assert len(workflow_issues) == 1
+assert workflow_clean[0]["record_id"] == "ST901"
+assert workflow_issues[0]["record_id"] == "ST902"
+assert workflow_issues[0]["reasons"] == "distance_m out of range"
+
+workflow_oak_counts = summarise_oaks(workflow_clean)
+assert workflow_oak_counts == [
+    {"species": "robur", "count": "1"}
+]

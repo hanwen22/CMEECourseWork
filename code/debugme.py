@@ -7,4 +7,4 @@ def buggyfunc(x):
 
 buggyfunc(20)
 
-%pdb
+# %pdb
