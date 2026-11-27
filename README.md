@@ -133,15 +133,62 @@ Only accepted records are used to calculate the oak species counts. This means i
 
 
 # Assignment 3:
+This repository contains two practical exercises
+Calculate tree heights – calculate tree heights from distance and angle measurements.
+
+Pound Hill species richness – analyse plant species richness and abundance under different cultivation treatments.
+
+Requirements:R 
+
+1. Calculate tree heights
+
+Files
+
+code/TreeHeight.R: calculates tree heights using the supplied tree data.
+
+code/get_TreeHeight.R: a generalised script that accepts a CSV file path as a command-line argument.
+
+data/trees.csv: input data containing Species, Distance.m and Angle.degrees.
+
+Run
+
+From the repository root:
+
 Rscript code/TreeHeight.R
 
-input: data/trees.csv
+To run the generalised script:
 
-Script: code/TreeHeight.R
+Rscript code/get_TreeHeight.R data/trees.csv
 
-Output: results/TreeHts.csv
+Outputs
 
-height_m = Distance.m * tan(Angle.degrees * pi / 180) , measurement of 8 m at 45 degrees gives a height of 8 m
+results/TreeHts.csv: tree measurements with an additional height_m column.
+
+The output files can be recreated by running the scripts again.
+
+2. Pound Hill species richness
+
+Files
+
+code/pound_hill_analysis.R: analyses species richness and abundance.
+
+data/pound_hill_data.csv: species abundance data.
+
+data/pound_hill_meta_data.csv: sampling metadata.
+
+Run
+
+From the repository root:
+
+Rscript code/pound_hill_analysis.R
+
+Outputs
+
+results/pound_hill_plot_richness.csv: summary of mean species richness and abundance by cultivation treatment, block and plot.
+
+results/pound_hill_plot_richness.pdf: boxplots showing species richness and total abundance across cultivation treatments.
+
+
 
 
 
